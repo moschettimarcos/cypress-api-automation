@@ -1,0 +1,6 @@
+{
+  "name": "Test Commenter",
+  "email": "commenter@example.com",
+  "body": "This is a test comment for API automation.",
+  "postId": 1
+}

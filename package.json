@@ -1,0 +1,36 @@
+{
+  "name": "cypress-api-automation",
+  "version": "1.0.0",
+  "description": "Professional API automation framework using Cypress - Complete test suite covering all HTTP methods and best practices",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "test": "cypress run",
+    "test:headed": "cypress run --headed",
+    "test:chrome": "cypress run --browser chrome",
+    "test:edge": "cypress run --browser edge",
+    "test:record": "cypress run --record",
+    "report:merge": "mochawesome-merge cypress/results/mochawesome/*.json > cypress/results/mochawesome/report.json",
+    "report:generate": "marge cypress/results/mochawesome/report.json"
+  },
+  "keywords": [
+    "cypress",
+    "api-testing",
+    "automation",
+    "e2e",
+    "testing"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^13.17.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0"
+  },
+  "dependencies": {
+    "ajv": "^8.12.0",
+    "ajv-formats": "^2.1.1"
+  }
+}
