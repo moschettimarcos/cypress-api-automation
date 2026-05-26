@@ -1,90 +1,125 @@
-# Cypress API Automation Framework
+# 🚀 Framework de Automação de APIs com Cypress
 
-A professional and comprehensive API automation framework built with Cypress, covering all HTTP methods, authentication strategies, schema validation, and error handling best practices.
+Framework profissional de automação de testes de API desenvolvido com Cypress, cobrindo métodos HTTP, autenticação, validação de schema, tratamento de erros e boas práticas utilizadas no mercado.
 
-## 🚀 Features
+---
 
-- **Complete HTTP Methods Coverage**: GET, POST, PUT, PATCH, DELETE
-- **Authentication Strategies**: Bearer Token, Basic Auth, API Key, OAuth 2.0, JWT
-- **Schema Validation**: JSON Schema validation using AJV
-- **Error Handling**: Comprehensive 4xx and 5xx error scenarios
-- **Custom Commands**: Reusable API commands for cleaner tests
-- **Fixtures & Data Management**: Organized test data and schemas
-- **Environment Configuration**: Multi-environment support
-- **Professional Reporting**: Mochawesome reports with detailed test results
-- **Best Practices**: Following industry standards for API testing
+# 📌 Funcionalidades
 
-## 📋 Prerequisites
+- ✅ Cobertura completa dos métodos HTTP:
+  - GET
+  - POST
+  - PUT
+  - PATCH
+  - DELETE
 
-- Node.js (v16 or higher)
-- npm or yarn
-- Basic knowledge of JavaScript and REST APIs
+- 🔐 Estratégias de autenticação:
+  - Bearer Token
+  - Basic Auth
+  - API Key
+  - OAuth 2.0
+  - JWT
 
-## 🛠️ Installation
+- 📄 Validação de Schema JSON utilizando AJV
 
-1. Clone the repository:
+- ⚠️ Tratamento de erros:
+  - Cenários 4xx
+  - Cenários 5xx
+  - Validações de falhas e respostas inválidas
+
+- 🧩 Custom Commands reutilizáveis
+
+- 📂 Organização de fixtures e schemas
+
+- 🌎 Configuração por ambiente
+
+- 📊 Relatórios profissionais com Mochawesome
+
+- 🧠 Estrutura baseada em boas práticas de automação de APIs
+
+---
+
+# 📋 Pré-requisitos
+
+Antes de iniciar, você precisa ter instalado:
+
+- Node.js (v16 ou superior)
+- npm ou yarn
+- Conhecimento básico em JavaScript e APIs REST
+
+---
+
+# 🛠️ Instalação
+
+## Clone o repositório
+
 ```bash
-git clone <your-repository-url>
+git clone <url-do-repositorio>
+```
+
+## Acesse a pasta do projeto
+
+```bash
 cd cypress-api-automation
 ```
 
-2. Install dependencies:
+## Instale as dependências
+
 ```bash
 npm install
 ```
 
-3. Open Cypress:
+## Abra o Cypress
+
 ```bash
 npm run cypress:open
 ```
 
-## 📁 Project Structure
+---
 
-```
+# 📁 Estrutura do Projeto
+
+```bash
 cypress-api-automation/
 ├── cypress/
 │   ├── e2e/
 │   │   └── api/
 │   │       ├── auth/
-│   │       │   └── authentication.cy.js
 │   │       ├── delete/
-│   │       │   └── deleteRequests.cy.js
 │   │       ├── errors/
-│   │       │   └── errorHandling.cy.js
 │   │       ├── get/
-│   │       │   └── getRequests.cy.js
 │   │       ├── patch/
-│   │       │   └── patchRequests.cy.js
 │   │       ├── post/
-│   │       │   └── postRequests.cy.js
 │   │       ├── put/
-│   │       │   └── putRequests.cy.js
 │   │       └── validation/
-│   │           └── schemaValidation.cy.js
+│   │
 │   ├── fixtures/
 │   │   ├── schemas/
-│   │   │   ├── postSchema.json
-│   │   │   └── userSchema.json
 │   │   ├── comment.json
 │   │   ├── post.json
 │   │   ├── todo.json
 │   │   └── user.json
+│   │
 │   ├── support/
 │   │   ├── commands.js
 │   │   └── e2e.js
+│   │
 │   └── results/
 │       └── mochawesome/
+│
 ├── cypress.config.js
 ├── cypress.env.json
 ├── package.json
 └── README.md
 ```
 
-## ⚙️ Configuration
+---
 
-### Environment Variables
+# ⚙️ Configurações
 
-Edit `cypress.env.json` to configure your API endpoints and authentication:
+## Variáveis de Ambiente
+
+Edite o arquivo `cypress.env.json` para configurar URLs e autenticações:
 
 ```json
 {
@@ -92,230 +127,333 @@ Edit `cypress.env.json` to configure your API endpoints and authentication:
   "apiVersion": "v1",
   "timeout": 10000,
   "auth": {
-    "bearerToken": "your-bearer-token-here",
-    "apiKey": "your-api-key-here",
+    "bearerToken": "seu-token",
+    "apiKey": "sua-api-key",
     "basicAuth": {
-      "username": "test-user",
-      "password": "test-password"
+      "username": "usuario-teste",
+      "password": "senha-teste"
     }
   }
 }
 ```
 
-### Cypress Configuration
+---
 
-The `cypress.config.js` file contains all Cypress-specific settings:
+# 🧪 Executando os Testes
 
-- Base URL
-- Test file patterns
-- Timeouts
-- Reporter configuration
-- Environment variables
+## Executar todos os testes
 
-## 🧪 Running Tests
-
-### Run all tests in headless mode:
 ```bash
 npm test
 ```
 
-### Run tests with Cypress UI:
+## Executar com interface gráfica
+
 ```bash
 npm run cypress:open
 ```
 
-### Run tests in specific browser:
+## Executar em navegadores específicos
+
+### Chrome
+
 ```bash
 npm run test:chrome
+```
+
+### Edge
+
+```bash
 npm run test:edge
 ```
 
-### Run tests with recording:
+## Executar com gravação
+
 ```bash
 npm run test:record
 ```
 
-### Generate and view reports:
+---
+
+# 📊 Gerando Relatórios
+
+## Mesclar relatórios
+
 ```bash
 npm run report:merge
+```
+
+## Gerar relatório HTML
+
+```bash
 npm run report:generate
 ```
 
-## 📚 Test Suites
+Os relatórios serão gerados em:
 
-### 1. GET Requests (`cypress/e2e/api/get/getRequests.cy.js`)
-
-- Basic GET requests
-- Single resource retrieval
-- Query parameters
-- Custom headers
-- Response validation
-- Performance testing
-- Edge cases
-
-### 2. POST Requests (`cypress/e2e/api/post/postRequests.cy.js`)
-
-- Create new resources
-- Using fixture data
-- Field validation
-- Data type handling
-- Special characters
-- Large data handling
-- Array data
-
-### 3. PUT Requests (`cypress/e2e/api/put/putRequests.cy.js`)
-
-- Complete resource updates
-- Partial updates
-- Non-existent resources
-- Data type changes
-- Null and empty values
-- Response validation
-- Concurrent updates
-
-### 4. PATCH Requests (`cypress/e2e/api/patch/patchRequests.cy.js`)
-
-- Partial resource updates
-- Multiple field updates
-- Nested object updates
-- Data type changes
-- Special characters
-- Sequential updates
-- Comparison with PUT
-
-### 5. DELETE Requests (`cypress/e2e/api/delete/deleteRequests.cy.js`)
-
-- Resource deletion
-- Non-existent resources
-- Response validation
-- Verification workflows
-- Idempotency
-- Create and delete workflows
-- Cascade delete concepts
-
-### 6. Authentication (`cypress/e2e/api/auth/authentication.cy.js`)
-
-- Bearer Token authentication
-- Basic Authentication
-- API Key authentication
-- OAuth 2.0 concepts
-- JWT authentication concepts
-- Session/Cookie authentication
-- Best practices
-- Multi-factor authentication concepts
-
-### 7. Schema Validation (`cypress/e2e/api/validation/schemaValidation.cy.js`)
-
-- User schema validation
-- Post schema validation
-- Comment schema validation
-- Todo schema validation
-- Nested object validation
-- Array validation
-- Custom schema validation
-- Response format validation
-
-### 8. Error Handling (`cypress/e2e/api/errors/errorHandling.cy.js`)
-
-- 4xx client errors (400, 401, 403, 404, 405, 409, 422, 429)
-- 5xx server errors (500, 502, 503, 504)
-- Error response structure
-- Invalid data handling
-- Network error handling
-- Retry logic
-- Error logging and reporting
-- Graceful degradation
-- Error recovery
-
-## 🔧 Custom Commands
-
-The framework includes reusable custom commands in `cypress/support/commands.js`:
-
-### API Request Commands
-
-- `cy.apiGet(endpoint, options)` - GET requests
-- `cy.apiPost(endpoint, body, options)` - POST requests
-- `cy.apiPut(endpoint, body, options)` - PUT requests
-- `cy.apiPatch(endpoint, body, options)` - PATCH requests
-- `cy.apiDelete(endpoint, options)` - DELETE requests
-
-### Authentication Commands
-
-- `cy.bearerAuth(token)` - Bearer token authentication
-- `cy.basicAuth(username, password)` - Basic authentication
-- `cy.apiKeyAuth(apiKey, headerName)` - API key authentication
-
-### Validation Commands
-
-- `cy.validateSchema(response, schema)` - JSON schema validation
-- `cy.assertStatus(response, expectedStatus)` - Status code assertion
-- `cy.assertBodyProperty(response, property, expectedValue)` - Body property assertion
-- `cy.assertHeader(response, headerName, expectedValue)` - Header assertion
-- `cy.assertResponseTime(response, maxTime)` - Response time assertion
-
-### Utility Commands
-
-- `cy.logResponse(response)` - Log response details
-- `cy.retryRequest(requestFn, maxRetries, delay)` - Retry failed requests
-
-## 📊 Reporting
-
-The framework uses Mochawesome for generating detailed HTML reports:
-
-- Test execution summary
-- Pass/fail statistics
-- Detailed test results
-- Screenshots on failure
-- Timestamped reports
-
-Reports are generated in `cypress/results/mochawesome/`
-
-## 🎯 Best Practices Implemented
-
-1. **Page Object Model**: Custom commands for reusable API operations
-2. **Data-Driven Testing**: Fixtures for test data separation
-3. **Environment Configuration**: Separate configs for different environments
-4. **Error Handling**: Comprehensive error scenario coverage
-5. **Schema Validation**: JSON Schema validation for response integrity
-6. **Authentication**: Multiple authentication strategies
-7. **Reporting**: Detailed test reports with Mochawesome
-8. **Code Organization**: Logical file structure and naming conventions
-9. **Documentation**: Inline comments and comprehensive README
-10. **Security**: Credentials stored in environment variables
-
-## 🔐 Security Considerations
-
-- Never hardcode credentials in test files
-- Use environment variables for sensitive data
-- Don't commit `.env` files to version control
-- Rotate API keys and tokens regularly
-- Use different credentials for different environments
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these guidelines:
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests for new functionality
-5. Submit a pull request
-
-## 📝 License
-
-This project is licensed under the MIT License.
-
-## 🙏 Acknowledgments
-
-- [Cypress](https://www.cypress.io/) - Testing framework
-- [JSONPlaceholder](https://jsonplaceholder.typicode.com/) - Fake REST API for testing
-- [Mochawesome](https://github.com/adamgruber/mochawesome) - Reporting
-- [AJV](https://github.com/ajv-validator/ajv) - JSON Schema validation
-
-## 📞 Contact
-
-For questions or suggestions, please open an issue in the repository.
+```bash
+cypress/results/mochawesome/
+```
 
 ---
 
-**Note**: This framework uses JSONPlaceholder as a test API. In production, replace the `apiUrl` in `cypress.env.json` with your actual API endpoint.
+# 📚 Suítes de Teste
+
+## ✅ GET Requests
+
+Arquivo:
+
+```bash
+cypress/e2e/api/get/getRequests.cy.js
+```
+
+Cobertura:
+
+- Validações GET
+- Query Params
+- Headers
+- Tempo de resposta
+- Edge cases
+- Validação de resposta
+
+---
+
+## ✅ POST Requests
+
+Arquivo:
+
+```bash
+cypress/e2e/api/post/postRequests.cy.js
+```
+
+Cobertura:
+
+- Criação de recursos
+- Uso de fixtures
+- Validação de campos
+- Caracteres especiais
+- Arrays
+- Grandes volumes de dados
+
+---
+
+## ✅ PUT Requests
+
+Arquivo:
+
+```bash
+cypress/e2e/api/put/putRequests.cy.js
+```
+
+Cobertura:
+
+- Atualização completa
+- Validação de retorno
+- Valores nulos
+- Recursos inexistentes
+- Atualizações concorrentes
+
+---
+
+## ✅ PATCH Requests
+
+Arquivo:
+
+```bash
+cypress/e2e/api/patch/patchRequests.cy.js
+```
+
+Cobertura:
+
+- Atualizações parciais
+- Atualização de múltiplos campos
+- Objetos aninhados
+- Comparação entre PATCH e PUT
+
+---
+
+## ✅ DELETE Requests
+
+Arquivo:
+
+```bash
+cypress/e2e/api/delete/deleteRequests.cy.js
+```
+
+Cobertura:
+
+- Exclusão de recursos
+- Fluxos de criação e exclusão
+- Idempotência
+- Validação de resposta
+
+---
+
+## ✅ Authentication
+
+Arquivo:
+
+```bash
+cypress/e2e/api/auth/authentication.cy.js
+```
+
+Cobertura:
+
+- Bearer Token
+- Basic Auth
+- API Key
+- OAuth 2.0
+- JWT
+- Sessão/Cookies
+- MFA (conceitual)
+
+---
+
+## ✅ Schema Validation
+
+Arquivo:
+
+```bash
+cypress/e2e/api/validation/schemaValidation.cy.js
+```
+
+Cobertura:
+
+- Schemas de usuário
+- Posts
+- Comentários
+- Todos
+- Arrays
+- Objetos aninhados
+
+---
+
+## ✅ Error Handling
+
+Arquivo:
+
+```bash
+cypress/e2e/api/errors/errorHandling.cy.js
+```
+
+Cobertura:
+
+- Erros 4xx
+- Erros 5xx
+- Retry
+- Falhas de rede
+- Logs
+- Recuperação de erro
+
+---
+
+# 🔧 Custom Commands
+
+O projeto possui comandos reutilizáveis no arquivo:
+
+```bash
+cypress/support/commands.js
+```
+
+## Requests
+
+```javascript
+cy.apiGet();
+cy.apiPost();
+cy.apiPut();
+cy.apiPatch();
+cy.apiDelete();
+```
+
+## Autenticação
+
+```javascript
+cy.bearerAuth();
+cy.basicAuth();
+cy.apiKeyAuth();
+```
+
+## Validações
+
+```javascript
+cy.validateSchema();
+cy.assertStatus();
+cy.assertBodyProperty();
+cy.assertHeader();
+cy.assertResponseTime();
+```
+
+## Utilitários
+
+```javascript
+cy.logResponse();
+cy.retryRequest();
+```
+
+---
+
+# 🎯 Boas práticas aplicadas
+
+- Estrutura organizada
+- Reutilização de código
+- Separação de dados com fixtures
+- Validação de schemas
+- Uso de variáveis de ambiente
+- Tratamento de erros
+- Relatórios detalhados
+- Custom Commands
+- Arquitetura escalável
+- Fácil manutenção
+
+---
+
+# 🔐 Segurança
+
+Boas práticas aplicadas no projeto:
+
+- Não salvar credenciais diretamente no código
+- Uso de variáveis de ambiente
+- Separação de ambientes
+- Tokens e API Keys isolados
+- Facilidade para integração CI/CD
+
+---
+
+# 🤝 Contribuições
+
+Contribuições são bem-vindas.
+
+Passos:
+
+1. Faça um fork
+2. Crie uma branch
+3. Realize suas alterações
+4. Adicione testes
+5. Abra um Pull Request
+
+---
+
+# 📝 Licença
+
+Este projeto está sob a licença MIT.
+
+---
+
+# 🙏 Créditos
+
+- Cypress
+- JSONPlaceholder
+- Mochawesome
+- AJV
+
+---
+
+# 📌 Observação
+
+O projeto utiliza a API pública JSONPlaceholder para fins de estudo e demonstração.
+
+Para utilização em ambiente real, altere a URL da API no arquivo:
+
+```bash
+cypress.env.json
+```
